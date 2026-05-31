@@ -1,7 +1,18 @@
+import { useEffect } from "react";
 import styles from "./About.module.css";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 export default function About() {
+  useEffect(() => {
+    document.title = "About Us | Nikha Foods - Trusted Food Supply Partners in Nigeria";
+    let meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Learn about Nikha Foods' mission to make quality foodstuffs accessible across Lagos. 10+ years of excellence in distribution and wholesale.");
+
+    const link = document.querySelector("link[rel*='icon']");
+    if (link) link.href = logo;
+  }, []);
+
   return (
     <div className={styles.page}>
       <div className={styles.header}>

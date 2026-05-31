@@ -1,12 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { products } from "../data/products";
 import styles from "./Products.module.css";
+import logo from "../assets/logo.png";
 
 const categories = ["All", ...new Set(products.map(p => p.category))];
 
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selected, setSelected] = useState(null);
+
+  useEffect(() => {
+    if (selected) {
+      document.title = `${selected.name} | Nikha Foods Products`;
+    } else {
+      document.title = "Product Catalogue | Premium Rice, Oil & Grains | Nikha Foods";
+    }
+
+    let meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Browse our extensive range of quality foodstuffs. Available in retail and wholesale quantities with competitive bulk pricing.");
+
+    const link = document.querySelector("link[rel*='icon']");
+    if (link) link.href = logo;
+  }, [selected]);
 
   const filtered = activeCategory === "All"
     ? products

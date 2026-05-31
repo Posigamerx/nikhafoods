@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Contact.module.css";
+import logo from "../assets/logo.png";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -7,6 +8,15 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", service: "", message: "" });
 
   const handle = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+
+  useEffect(() => {
+    document.title = "Contact Us | Request a Bulk Quote | Nikha Foods";
+    let meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Get in touch with Nikha Foods for product enquiries, wholesale rates, and delivery options in Lagos and beyond.");
+
+    const link = document.querySelector("link[rel*='icon']");
+    if (link) link.href = logo;
+  }, []);
 
   const submit = async (e) => {
     e.preventDefault();

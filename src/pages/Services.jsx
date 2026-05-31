@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import styles from "./Services.module.css";
 import { Link } from "react-router-dom";
 import { TbTruckDelivery } from "react-icons/tb";
 import { BsFillBox2Fill } from "react-icons/bs";
 import { TiShoppingCart } from "react-icons/ti";
+import logo from "../assets/logo.png";
 
 
 
@@ -34,6 +36,15 @@ const services = [
 ];
 
 export default function Services() {
+  useEffect(() => {
+    document.title = "Our Services | Food Distribution & Wholesale | Nikha Foods";
+    let meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Discover our core services: Logistics Distribution, Wholesale Supply, and Retail Sales designed for businesses and homes across Nigeria.");
+
+    const link = document.querySelector("link[rel*='icon']");
+    if (link) link.href = logo;
+  }, []);
+
   return (
     <div className={styles.page}>
       <div className={styles.header}>

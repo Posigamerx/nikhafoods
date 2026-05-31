@@ -34,6 +34,15 @@ const services = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Nikha Foods | Quality Foodstuffs Wholesale & Retail in Lagos, Nigeria";
+    let meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Nikha Foods is your trusted partner for wholesale distribution, retail supply, and sourcing of premium foodstuffs across Nigeria. Delivered fresh to your door.");
+
+    const link = document.querySelector("link[rel*='icon']");
+    if (link) link.href = logo;
+  }, []);
+
   return (
     <div>
       {/* HERO */}
@@ -94,8 +103,8 @@ export default function Home() {
         <div className={styles.tickerTrack}>
           {["Rice", "Vegetable Oil", "Pasta", "Macaroni", "Flour", "Sugar", "Noodles", "Tomato Paste",
             "Rice", "Vegetable Oil", "Pasta", "Macaroni", "Flour", "Sugar", "Noodles", "Tomato Paste"].map((t, i) => (
-            <span key={i}><span className={styles.tickerDot}>✦</span>{t}</span>
-          ))}
+              <span key={i}><span className={styles.tickerDot}>✦</span>{t}</span>
+            ))}
         </div>
       </div>
 
