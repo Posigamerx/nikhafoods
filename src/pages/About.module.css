@@ -1,0 +1,101 @@
+.page { min-height: 100vh; }
+
+.header {
+  background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%);
+  padding: 130px 5vw 70px;
+  text-align: center; color: var(--white);
+}
+.label {
+  display: inline-block;
+  background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.4);
+  color: var(--gold); font-size: 0.78rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  padding: 0.4rem 1rem; border-radius: 40px; margin-bottom: 1.2rem;
+}
+.header h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 900; margin-bottom: 1rem; }
+.header p { font-size: 1rem; color: rgba(255,255,255,0.65); font-weight: 300; }
+
+.story {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  align-items: center; padding: 90px 5vw;
+}
+
+.storyVisual { position: relative; }
+
+.storyCard {
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.logoLarge {
+  width: 80px; height: 80px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 2.5rem; font-weight: 900; color: var(--blue-deep);
+  margin: 0 auto 1.5rem;
+}
+.storyCardTitle { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 900; }
+.storyCardSub { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.4rem; }
+
+.statFloat {
+  position: absolute; bottom: -20px; right: -20px;
+  background: var(--gold);
+  border-radius: 18px; padding: 1.3rem 1.8rem;
+  color: var(--blue-deep);
+}
+.statFloat .statNum { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 900; line-height: 1; }
+.statFloat .statLbl { font-size: 0.78rem; font-weight: 700; margin-top: 4px; opacity: 0.75; }
+
+.sectionLabel {
+  display: inline-block;
+  background: var(--blue-pale); color: var(--blue-mid);
+  font-size: 0.78rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  padding: 0.4rem 1rem; border-radius: 40px; margin-bottom: 1rem;
+}
+
+.storyText h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem; font-weight: 700; color: var(--dark);
+  margin-bottom: 1.2rem; line-height: 1.2;
+}
+.storyText p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 1rem; }
+
+.values { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+.valueTag {
+  background: var(--blue-pale); color: var(--blue-mid);
+  font-size: 0.82rem; font-weight: 700;
+  padding: 0.4rem 1rem; border-radius: 40px;
+}
+
+.stats {
+  background: var(--blue-deep);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  padding: 60px 5vw; gap: 2rem;
+}
+.statBox { text-align: center; }
+.statNum { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 900; color: var(--gold); }
+.statLabel { font-size: 0.88rem; color: rgba(255,255,255,0.6); margin-top: 0.4rem; }
+
+.cta {
+  background: var(--gold); padding: 70px 5vw; text-align: center;
+}
+.cta h2 { font-family: 'Fraunces', serif; font-size: 2rem; color: var(--blue-deep); font-weight: 900; margin-bottom: 0.8rem; }
+.cta p { color: rgba(10,43,110,0.7); margin-bottom: 2rem; }
+.ctaBtn {
+  background: var(--blue-deep); color: var(--white);
+  padding: 0.9rem 2.2rem; border-radius: 40px;
+  font-weight: 800; font-size: 0.95rem; display: inline-block;
+  transition: transform 0.15s;
+}
+.ctaBtn:hover { transform: translateY(-2px); background: var(--blue-mid); }
+
+@media (max-width: 768px) {
+  .story { grid-template-columns: 1fr; gap: 3rem; }
+  .stats { grid-template-columns: 1fr 1fr; }
+}

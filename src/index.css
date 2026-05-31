@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --blue-deep:    #0A2B6E;
+  --blue-mid:     #1A4DB8;
+  --blue-bright:  #2563EB;
+  --blue-light:   #DBEAFE;
+  --blue-pale:    #EFF6FF;
+  --gold:         #F5A623;
+  --gold-dark:    #C8820A;
+  --gold-light:   #FEF3DC;
+  --white:        #FFFFFF;
+  --off-white:    #F8FAFF;
+  --dark:         #0A0E1A;
+  --mid:          #374151;
+  --muted:        #6B7280;
+  --border:       rgba(10,43,110,0.1);
+}
+
+html { scroll-behavior: smooth; font-size: 112%; }
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--off-white);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+::selection { background: var(--blue-light); color: var(--blue-deep); }

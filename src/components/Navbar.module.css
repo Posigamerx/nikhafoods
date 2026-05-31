@@ -1,0 +1,139 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 5vw;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 16px 5vw;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  transition: height 0.3s ease;
+}
+
+.scrolled .logoImg {
+  height: 36px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  list-style: none;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.scrolled .link {
+  color: var(--blue-deep);
+}
+
+.link:hover,
+.active {
+  color: var(--gold) !important;
+}
+
+.cta {
+  background: var(--gold);
+  color: var(--blue-deep) !important;
+  padding: 0.75rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1001;
+  padding: 8px;
+}
+
+.burger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.scrolled .burger span,
+.navOpen .burger span {
+  background: var(--blue-deep);
+}
+
+@media (max-width: 900px) {
+  .burger {
+    display: flex;
+  }
+
+  .links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .open {
+    right: 0;
+  }
+
+  .links .link {
+    color: var(--blue-deep);
+    font-size: 1.4rem;
+  }
+}
+
+.x1 {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.x2 {
+  opacity: 0;
+}
+
+.x3 {
+  transform: translateY(-8px) rotate(-45deg);
+}
